@@ -6,7 +6,7 @@ const Banner = () => {
     <div id="banner-section">
       <div className="row d-flex align-items-center">
         <div className="col-md-8 col-sm-12 shadow about-ceo col-lg-8">
-          <h2 className="fw-bold mb-0">About Ceo</h2>
+          <h2 className="fw-bold mb-0 ">About Ceo</h2>
           <div className="text-start p-4">
             <p style={{ fontSize: "18px", fontWeight: 600 }}>
               Introducing a new CEO to employees should take precedence over
@@ -22,9 +22,8 @@ const Banner = () => {
         </div>
         <div className="col-md-4 col-sm-12 col-lg-4">
           <img
-            style={{ marginTop: "-100px" }}
             src="https://i.ibb.co/qyH2mvH/Website-Photo-4.png"
-            className="img-fluid"
+            className="img-fluid ceo-pic"
             alt=""
           />
         </div>

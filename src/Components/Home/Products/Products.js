@@ -6,14 +6,12 @@ import "./Product.css";
 
 const Products = () => {
   const { id } = useParams();
-  console.log(id);
   const [singleProduct, setSingleProduct] = useState({});
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleProduct(data);
-        console.log(data);
       });
   }, [id]);
   const {
@@ -96,17 +94,20 @@ const Products = () => {
               <p>
                 <b>Brand:</b> <span className="ms-2">{brand}</span>
               </p>
-              <label>
-                <b>Quantity:</b>
-              </label>
-              <input className="ms-2" type="number" placeholder="Item" />
+              <div className="quantity-input">
+                <label>
+                  <b>Quantity:</b>
+                </label>
+                <input className="ms-2" type="number" placeholder="Item" />
 
-              <button class="btn ml-5 mystyle ms-3 ">
-                <i class="text-white mr-2 fas fa-shopping-cart"></i> Add to Cart
-              </button>
-              <button class="btn ml-2 mystyle ms-3 ">
-                <i class="text-white mr-2 fas fa-shopping-basket"></i> Buy Now
-              </button>
+                <button class="btn ml-5 mystyle ms-3 ">
+                  <i class="text-white mr-2 fas fa-shopping-cart"></i> Add to
+                  Cart
+                </button>
+                <button class="btn ml-2 mystyle ms-3 ">
+                  <i class="text-white mr-2 fas fa-shopping-basket"></i> Buy Now
+                </button>
+              </div>
             </div>
           </div>
         </div>

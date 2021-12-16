@@ -11,6 +11,23 @@
   font-size: 12px;
   margin-bottom: -1px;
 }
+.quantity-input input {
+  width: 150px !important;
+  text-align: left;
+}
+.new-arrival {
+  font-family: "Lobster", cursive;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+@media only screen and (max-width: 600px) {
+  .quantity-input {
+    display: block;
+  }
+  .quantity-input input {
+    margin-bottom: 15px;
+  }
+}
 .col-md-7 h3 {
   margin-top: 2px;
   color: #555;

@@ -5,12 +5,62 @@
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  /* height: auto; */
-  /* padding: 80px; */
+}
+.ceo-pic {
+  margin-top: -100px;
 }
 .about-ceo {
   background-color: rgba(255, 159, 174, 0.596);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5px;
+}
+.about-ceo h2 {
+  font-family: "Lobster", cursive;
+  position: relative;
+}
+.about-ceo h2::before {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 2px;
+  position: absolute;
+  left: 75px;
+  top: 15px;
+  background-color: black;
+}
+.about-ceo h2::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 2px;
+  position: absolute;
+  left: 75px;
+  top: 19px;
+  background-color: black;
+}
+@media only screen and (max-width: 600px) {
+  .ceo-pic {
+    margin-top: -80px;
+  }
+  .about-ceo h2::before {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 2px;
+    position: absolute;
+    left: 58px;
+    top: 33px;
+    background-color: black;
+  }
+  .about-ceo h2::after {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 2px;
+    position: absolute;
+    left: 58px;
+    top: 37px;
+    background-color: black;
+  }
 }

@@ -30,7 +30,7 @@ const Navigation = () => {
               >
                 Home <i class="fas fa-laptop-house ms-2"></i>
               </Link>
-              <Link class="nav-link active shadow" to="/home">
+              <Link class="nav-link active shadow" to="/explore">
                 Explore <i class="fas fa-store-alt ms-2"></i>
               </Link>
               <Link class="nav-link active shadow " to="/home">

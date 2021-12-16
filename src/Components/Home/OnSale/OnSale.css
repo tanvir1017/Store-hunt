@@ -18,6 +18,7 @@
 }
 .category-title {
   text-align: left;
+  margin-top: 10px;
 }
 .title-box::after {
   content: "";

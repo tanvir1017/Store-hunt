@@ -1,0 +1,16 @@
+#banner-section {
+  background-image: url("https://i.ibb.co/gMqd7yw/pink.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  /* height: auto; */
+  /* padding: 80px; */
+}
+.about-ceo {
+  background-color: rgba(255, 159, 174, 0.596);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+}

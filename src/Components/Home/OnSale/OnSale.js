@@ -1,15 +1,16 @@
 import React from "react";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import "./OnSale.css";
 
 const OnSale = ({ sale }) => {
-  const { name, price, img, rating } = sale;
+  const { name, price, img, rating, _id } = sale;
   return (
     <div className=" col-lg-3 col-md-6 ">
-      <div class="product-top">
-        <a href="/Product/index.html">
+      <d class="product-top">
+        <Link to={`/product/${_id}`}>
           <img src={img} class="mb-3 img-fluid " alt="" />
-        </a>
+        </Link>
         <div className="icon">
           <div class="overlay-right">
             <button type="button" class="btn" title="Quick shop">
@@ -36,7 +37,7 @@ const OnSale = ({ sale }) => {
             <p class="small">Price: ${price}</p>
           </div>
         </div>
-      </div>
+      </d>
     </div>
   );
 };

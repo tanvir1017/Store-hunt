@@ -1,15 +1,15 @@
 import React from "react";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import "./OnSale.css";
-
 const Trending = ({ sale }) => {
-  const { name, price, img, rating } = sale;
+  const { _id, name, price, img, rating } = sale;
   return (
-    <div className=" col-lg-3 col-md-6 mt-4 ">
+    <div className=" col-lg-3 col-md-6 mt-4">
       <div class="product-top">
-        <a href="/Product/index.html">
+        <Link to={`/product/${_id}`}>
           <img src={img} class="mb-3 img-fluid " alt="" />
-        </a>
+        </Link>
         <div className="icon">
           <div class="overlay-right">
             <button type="button" class="btn" title="Quick shop">

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = () => {
+const Navigation2 = () => {
   return (
     <div>
       <nav class="navbar bg-dark navbar-expand-lg">
@@ -43,4 +43,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navigation2;

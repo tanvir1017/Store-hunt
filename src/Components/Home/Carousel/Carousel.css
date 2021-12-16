@@ -1,0 +1,11 @@
+.slider {
+  width: 50%;
+  margin-left: 15%;
+  padding: 0 10px;
+}
+.carousel {
+  box-shadow: 1px 1px 4px 1px rgb (0, 0, 0, 0.3);
+}
+.carousel-item {
+  margin-top: -57px !important;
+}

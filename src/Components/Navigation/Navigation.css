@@ -1,0 +1,32 @@
+.navbar {
+  padding: 0px !important;
+}
+.navbar a {
+  z-index: 1000;
+  color: white;
+}
+.nav-link {
+  margin: 5px;
+  background-color: #e84545;
+  color: white !important;
+  padding: 7px 14px !important;
+  transition: 0.6s;
+}
+.nav-link-1 {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.nav-link-2 {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.nav-link:hover {
+  transform: translateX(-10px);
+}
+.navbar-toggler {
+  color: black;
+  border: none !important;
+
+  box-shadow: none !important;
+  z-index: 1000;
+}

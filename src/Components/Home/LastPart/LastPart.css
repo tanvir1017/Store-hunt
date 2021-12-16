@@ -1,0 +1,98 @@
+/* * footer start here */
+footer {
+  margin-top: 50px;
+  background-color: rgb(54, 51, 51);
+  color: #fff;
+  padding: 2% 0%;
+}
+footer h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+footer p {
+  font-size: 12px;
+}
+footer p a {
+  text-align: left;
+}
+.for-resposive p a {
+  text-align: left;
+}
+.for-resposive p .fab {
+  margin-left: 10px;
+  padding: 3px 6px;
+  border: 1px solid #e84545;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.for-resposive p .fab:hover {
+  background: #e84545;
+  color: black;
+  transform: translateX(10px);
+}
+
+.for-resposive p a {
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.for-resposive p a:hover {
+  transform: translateX(10px);
+}
+
+.row a {
+  text-decoration: none;
+  color: white;
+  width: 100px;
+}
+.row a:hover {
+  text-decoration: underline;
+  color: #e84545;
+}
+.row .mar {
+  margin-right: 80px;
+  float: left;
+}
+
+.download-app img {
+  width: 70%;
+  cursor: pointer;
+}
+hr {
+  background-color: #fff;
+  margin-top: 50px;
+}
+.copyright-clip {
+  padding: 1% 0%;
+}
+.copyright-text {
+  font-size: 18px;
+}
+.last {
+  float: right;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 980px) {
+  footer {
+    text-align: center;
+  }
+
+  .row .mar {
+    margin-right: -20%;
+    float: left;
+  }
+  .footer p a {
+    margin-left: 10%;
+  }
+  .for-resposive {
+    margin-bottom: 50px;
+  }
+  .last {
+    float: none;
+    text-align: center;
+    font-family: nexa;
+  }
+}
+
+/* footer start here */

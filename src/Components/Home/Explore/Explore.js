@@ -4,6 +4,7 @@ import Hotdeals from "../OnSale/Hotdeals";
 import OnSale from "../OnSale/OnSale";
 import "../OnSale/OnSale.css";
 import Trending from "../OnSale/Trending";
+import "./Explore.css";
 
 const Explore = () => {
   const [sales, setSales] = useState([]);
@@ -20,6 +21,11 @@ const Explore = () => {
   return (
     <div>
       <Navigation2></Navigation2>
+      <div className="row banner_sec">
+        <div className="col-lg-8 col-sm-10">
+          <input type="text" placeholder="search" />
+        </div>
+      </div>
       <>
         {/* <!-- on sale section --> */}
         <section id="on-sale">

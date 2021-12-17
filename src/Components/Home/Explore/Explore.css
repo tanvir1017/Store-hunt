@@ -1,0 +1,9 @@
+.banner_sec {
+  background-image: url("https://www.dynodesoft.com/assets/img/Ecommerce-gif-1.gif");
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 200px;
+  /* width: 100%; */
+}

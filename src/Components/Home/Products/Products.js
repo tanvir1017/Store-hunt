@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import Navigation2 from "../../Navigation/Navigation2";
 import "./Product.css";
 
 const Products = () => {
+  const { user } = useAuth();
   const { id } = useParams();
   const [singleProduct, setSingleProduct] = useState({});
   useEffect(() => {
@@ -14,7 +16,9 @@ const Products = () => {
         setSingleProduct(data);
       });
   }, [id]);
+
   const {
+    name,
     title,
     pcode,
     avilavility,
@@ -25,6 +29,27 @@ const Products = () => {
     img,
     description,
   } = singleProduct;
+
+  const buyNow = () => {
+    fetch(`http://localhost:5000/order`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        pcode: pcode,
+        rating: rating,
+        img: img,
+        brand: brand,
+        email: user.email,
+      }),
+    })
+      .the((res) => res.josn())
+      .then((data) => console.log(data));
+  };
+
+  // console.log(data);
   return (
     <div>
       <Navigation2 />
@@ -104,7 +129,7 @@ const Products = () => {
                   <i className="text-white mr-2 fas fa-shopping-cart"></i> Add
                   to Cart
                 </button>
-                <button className="btn ml-2 mystyle ms-3 ">
+                <button className="btn ml-2 mystyle ms-3" onClick={buyNow}>
                   <i className="text-white mr-2 fas fa-shopping-basket"></i> Buy
                   Now
                 </button>
@@ -128,144 +153,6 @@ const Products = () => {
           <p>{description}</p>
           <hr className="hr-style" />
         </div>
-
-        {/* <!-- on sale section -->
-                <section id="on-sale">
-                    <div className="container">
-                        <div className="title-box">
-                            <h2>Realeted Product</h2>
-                        </div>
-                    </div>
-                
-                </section>
-                <!-- on sale section -->
-                
-                <!-- featured section start here -->
-                <div id="features-section">
-                    <div className="container">
-                        <div className="row border p-3 mb-4">
-                            <div className="col-lg-12">
-                                <h5 className="mb-2 text-muted ml-5">All you nedd in here</h5>
-                
-                            </div>
-                
-                            <div className="col-lg-3 col-md-6 ">
-                                <div className="product-top">
-                                    <img src="1 watch.jpg" className="mb-3 img-fluid" alt="">
-                                    <div className="overlay-right">
-                                        <button type="button" className="btn" title="Quick shop">
-                                            <i className="fas fa-eye"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to wishlist">
-                                            <i className="fas fa-heart"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to cart">
-                                            <i className="fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                
-                                    <div className="product-review text-center">
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star-half "></i>
-                                        <i className=" far fa-star"></i>
-                                        <h4 className="small m-0 p-0">Fitness Watch</h4>
-                                        <p className="small">tk: 900.00</p>
-                
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div className="col-lg-3 col-md-6">
-                                <div className="product-top">
-                                    <img src="2 shirt.jpg" className="mb-3 img-fluid" alt="">
-                                    <div className="overlay-right">
-                                        <button type="button" className="btn" title="Quick shop">
-                                            <i className="fas fa-eye"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to wishlist">
-                                            <i className="fas fa-heart"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to cart">
-                                            <i className="fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                
-                                    <div className="product-review text-center">
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star-half "></i>
-                                        <i className=" far fa-star"></i>
-                                        <h4 className="small m-0 p-0">Shirt Package</h4>
-                                        <p className="small">tk: 100.00</p>
-                
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div className="col-lg-3 col-md-6">
-                                <div className="product-top">
-                                    <img src="bag2.jpg" className="mb-3 img-fluid" alt="">
-                                    <div className="overlay-right">
-                                        <button type="button" className="btn" title="Quick shop">
-                                            <i className="fas fa-eye"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to wishlist">
-                                            <i className="fas fa-heart"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to cart">
-                                            <i className="fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                
-                                    <div className="product-review text-center">
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star-half "></i>
-                                        <i className=" far fa-star"></i>
-                                        <h4 className="small m-0 p-0">Black Bag</h4>
-                                        <p className="small">tk: 650.00</p>
-                
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div className="col-lg-3 col-md-6">
-                                <div className="product-top">
-                                    <img src="bag1.jpg" className="mb-3 img-fluid" alt="">
-                                    <div className="overlay-right">
-                                        <button type="button" className="btn" title="Quick shop">
-                                            <i className="fas fa-eye"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to wishlist">
-                                            <i className="fas fa-heart"></i>
-                                        </button>
-                                        <button type="button" className="btn" title="Add to cart">
-                                            <i className="fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                
-                                    <div className="product-review text-center">
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star "></i>
-                                        <i className=" fas fa-star-half "></i>
-                                        <i className=" far fa-star"></i>
-                                        <h4 className="small m-0 p-0">Golden Bag</h4>
-                                        <p className="small">tk: 2,150.00</p>
-                
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div> */}
       </section>
       {/* <!-- product description --> */}
     </div>

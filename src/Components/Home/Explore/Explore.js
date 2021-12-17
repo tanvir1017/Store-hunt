@@ -23,18 +23,18 @@ const Explore = () => {
       <>
         {/* <!-- on sale section --> */}
         <section id="on-sale">
-          <div class="container">
-            <div class="title-box">
-              <h2>On-Sale</h2>
+          <div className="container">
+            <div className="title-box">
+              <h2>Trending</h2>
             </div>
           </div>
         </section>
         {/* <!-- on sale section --> */}
         <div id="features-section">
           <div className="container">
-            <div class="row p-3 mb-4">
-              <div class="col-lg-12">
-                <h5 class="mb-2 text-muted category-title">Trending </h5>
+            <div className="row p-3 mb-4">
+              <div className="col-lg-12">
+                <h5 className="mb-2 text-muted category-title">Trending </h5>
               </div>{" "}
               {trending.map((sale) => (
                 <OnSale key={sale._id} sale={sale}></OnSale>
@@ -42,8 +42,8 @@ const Explore = () => {
             </div>
             {/* <!-- on sale section --> */}
             <section id="on-sale mb-2">
-              <div class="container">
-                <div class="title-box">
+              <div className="container">
+                <div className="title-box">
                   <h2>Hot-Deals</h2>
                 </div>
               </div>
@@ -51,9 +51,9 @@ const Explore = () => {
             {/* <!-- hot deals section --> */}
             <div id="features-section">
               <div className="container">
-                <div class="row p-3 mb-4">
-                  <div class="col-lg-12">
-                    <h5 class="mb-2 text-muted category-title">Hotdeal </h5>
+                <div className="row p-3 mb-4">
+                  <div className="col-lg-12">
+                    <h5 className="mb-2 text-muted category-title">Hotdeal </h5>
                   </div>{" "}
                   {/* <!-- on sale section --> */}
                   {hotdeals.map((sale) => (
@@ -64,8 +64,8 @@ const Explore = () => {
             </div>
             {/* <!-- on sale section --> */}
             <section id="on-sale">
-              <div class="container">
-                <div class="title-box">
+              <div className="container">
+                <div className="title-box">
                   <h2>On-Sale</h2>
                 </div>
               </div>
@@ -73,9 +73,11 @@ const Explore = () => {
             {/* <!-- on sale section --> */}
             <div id="features-section">
               <div className="container">
-                <div class="row p-3 mb-4">
-                  <div class="col-lg-12">
-                    <h5 class="mb-2 text-muted category-title">Vagitables</h5>
+                <div className="row p-3 mb-4">
+                  <div className="col-lg-12">
+                    <h5 className="mb-2 text-muted category-title">
+                      Vagitables
+                    </h5>
                   </div>{" "}
                   {vagitables.map((sale) => (
                     <Hotdeals key={sale._id} sale={sale}></Hotdeals>

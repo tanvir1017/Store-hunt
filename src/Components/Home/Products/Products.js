@@ -29,50 +29,50 @@ const Products = () => {
     <div>
       <Navigation2 />
       {/* <!-- product slider start --> */}
-      <section class="product-slider">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5">
+      <section className="product-slider">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
               <div
                 id="carouselExampleIndicators"
-                class="carousel slide"
+                className="carousel slide"
                 data-ride="carousel"
                 data-intervel="2000"
               >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src={img} class="d-block w-100" alt="..." />
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img src={img} className="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <a
-                  class="carousel-control-prev"
+                  className="carousel-control-prev"
                   href="#carouselExampleIndicators"
                   role="button"
                   data-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    className="carousel-control-prev-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="sr-only">Previous</span>
+                  <span className="sr-only">Previous</span>
                 </a>
                 <a
-                  class="carousel-control-next"
+                  className="carousel-control-next"
                   href="#carouselExampleIndicators"
                   role="button"
                   data-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    className="carousel-control-next-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="sr-only">Next</span>
+                  <span className="sr-only">Next</span>
                 </a>
               </div>
             </div>
 
-            <div class="col-md-7 text-start">
-              <p class="new-arrival text-center">{condition}</p>
+            <div className="col-md-7 text-start">
+              <p className="new-arrival text-center">{condition}</p>
               <h3>{title}</h3>
               <p>Product Code: {pcode}</p>
 
@@ -84,7 +84,7 @@ const Products = () => {
                 readonly
               />
 
-              <p class="price"> USD ${price}</p>
+              <p className="price"> USD ${price}</p>
               <p>
                 <b>Avilavility:</b> <span className="ms-2">{avilavility}</span>
               </p>
@@ -100,12 +100,13 @@ const Products = () => {
                 </label>
                 <input className="ms-2" type="number" placeholder="Item" />
 
-                <button class="btn ml-5 mystyle ms-3 ">
-                  <i class="text-white mr-2 fas fa-shopping-cart"></i> Add to
-                  Cart
+                <button className="btn ml-5 mystyle ms-3 ">
+                  <i className="text-white mr-2 fas fa-shopping-cart"></i> Add
+                  to Cart
                 </button>
-                <button class="btn ml-2 mystyle ms-3 ">
-                  <i class="text-white mr-2 fas fa-shopping-basket"></i> Buy Now
+                <button className="btn ml-2 mystyle ms-3 ">
+                  <i className="text-white mr-2 fas fa-shopping-basket"></i> Buy
+                  Now
                 </button>
               </div>
             </div>
@@ -115,9 +116,9 @@ const Products = () => {
       {/* <!-- product slider start --> */}
 
       {/* <!-- product description --> */}
-      <section class="product-description mt-5 text-start">
-        <div class="container">
-          <h5 class="font-weight-bold large mb-5 text-start">
+      <section className="product-description mt-5 text-start">
+        <div className="container">
+          <h5 className="font-weight-bold large mb-5 text-start">
             Product Description
           </h5>
           <p>
@@ -125,13 +126,13 @@ const Products = () => {
             {description}
           </p>
           <p>{description}</p>
-          <hr class="hr-style" />
+          <hr className="hr-style" />
         </div>
 
         {/* <!-- on sale section -->
                 <section id="on-sale">
-                    <div class="container">
-                        <div class="title-box">
+                    <div className="container">
+                        <div className="title-box">
                             <h2>Realeted Product</h2>
                         </div>
                     </div>
@@ -141,124 +142,124 @@ const Products = () => {
                 
                 <!-- featured section start here -->
                 <div id="features-section">
-                    <div class="container">
-                        <div class="row border p-3 mb-4">
-                            <div class="col-lg-12">
-                                <h5 class="mb-2 text-muted ml-5">All you nedd in here</h5>
+                    <div className="container">
+                        <div className="row border p-3 mb-4">
+                            <div className="col-lg-12">
+                                <h5 className="mb-2 text-muted ml-5">All you nedd in here</h5>
                 
                             </div>
                 
-                            <div class="col-lg-3 col-md-6 ">
-                                <div class="product-top">
-                                    <img src="1 watch.jpg" class="mb-3 img-fluid" alt="">
-                                    <div class="overlay-right">
-                                        <button type="button" class="btn" title="Quick shop">
-                                            <i class="fas fa-eye"></i>
+                            <div className="col-lg-3 col-md-6 ">
+                                <div className="product-top">
+                                    <img src="1 watch.jpg" className="mb-3 img-fluid" alt="">
+                                    <div className="overlay-right">
+                                        <button type="button" className="btn" title="Quick shop">
+                                            <i className="fas fa-eye"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to wishlist">
-                                            <i class="fas fa-heart"></i>
+                                        <button type="button" className="btn" title="Add to wishlist">
+                                            <i className="fas fa-heart"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to cart">
-                                            <i class="fas fa-shopping-cart"></i>
+                                        <button type="button" className="btn" title="Add to cart">
+                                            <i className="fas fa-shopping-cart"></i>
                                         </button>
                                     </div>
                 
-                                    <div class="product-review text-center">
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star-half "></i>
-                                        <i class=" far fa-star"></i>
-                                        <h4 class="small m-0 p-0">Fitness Watch</h4>
-                                        <p class="small">tk: 900.00</p>
+                                    <div className="product-review text-center">
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star-half "></i>
+                                        <i className=" far fa-star"></i>
+                                        <h4 className="small m-0 p-0">Fitness Watch</h4>
+                                        <p className="small">tk: 900.00</p>
                 
                                     </div>
                                 </div>
                             </div>
                 
-                            <div class="col-lg-3 col-md-6">
-                                <div class="product-top">
-                                    <img src="2 shirt.jpg" class="mb-3 img-fluid" alt="">
-                                    <div class="overlay-right">
-                                        <button type="button" class="btn" title="Quick shop">
-                                            <i class="fas fa-eye"></i>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="product-top">
+                                    <img src="2 shirt.jpg" className="mb-3 img-fluid" alt="">
+                                    <div className="overlay-right">
+                                        <button type="button" className="btn" title="Quick shop">
+                                            <i className="fas fa-eye"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to wishlist">
-                                            <i class="fas fa-heart"></i>
+                                        <button type="button" className="btn" title="Add to wishlist">
+                                            <i className="fas fa-heart"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to cart">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                
-                                    <div class="product-review text-center">
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star-half "></i>
-                                        <i class=" far fa-star"></i>
-                                        <h4 class="small m-0 p-0">Shirt Package</h4>
-                                        <p class="small">tk: 100.00</p>
-                
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div class="col-lg-3 col-md-6">
-                                <div class="product-top">
-                                    <img src="bag2.jpg" class="mb-3 img-fluid" alt="">
-                                    <div class="overlay-right">
-                                        <button type="button" class="btn" title="Quick shop">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn" title="Add to wishlist">
-                                            <i class="fas fa-heart"></i>
-                                        </button>
-                                        <button type="button" class="btn" title="Add to cart">
-                                            <i class="fas fa-shopping-cart"></i>
+                                        <button type="button" className="btn" title="Add to cart">
+                                            <i className="fas fa-shopping-cart"></i>
                                         </button>
                                     </div>
                 
-                                    <div class="product-review text-center">
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star-half "></i>
-                                        <i class=" far fa-star"></i>
-                                        <h4 class="small m-0 p-0">Black Bag</h4>
-                                        <p class="small">tk: 650.00</p>
+                                    <div className="product-review text-center">
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star-half "></i>
+                                        <i className=" far fa-star"></i>
+                                        <h4 className="small m-0 p-0">Shirt Package</h4>
+                                        <p className="small">tk: 100.00</p>
                 
                                     </div>
                                 </div>
                             </div>
                 
-                            <div class="col-lg-3 col-md-6">
-                                <div class="product-top">
-                                    <img src="bag1.jpg" class="mb-3 img-fluid" alt="">
-                                    <div class="overlay-right">
-                                        <button type="button" class="btn" title="Quick shop">
-                                            <i class="fas fa-eye"></i>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="product-top">
+                                    <img src="bag2.jpg" className="mb-3 img-fluid" alt="">
+                                    <div className="overlay-right">
+                                        <button type="button" className="btn" title="Quick shop">
+                                            <i className="fas fa-eye"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to wishlist">
-                                            <i class="fas fa-heart"></i>
+                                        <button type="button" className="btn" title="Add to wishlist">
+                                            <i className="fas fa-heart"></i>
                                         </button>
-                                        <button type="button" class="btn" title="Add to cart">
-                                            <i class="fas fa-shopping-cart"></i>
+                                        <button type="button" className="btn" title="Add to cart">
+                                            <i className="fas fa-shopping-cart"></i>
                                         </button>
                                     </div>
                 
-                                    <div class="product-review text-center">
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star "></i>
-                                        <i class=" fas fa-star-half "></i>
-                                        <i class=" far fa-star"></i>
-                                        <h4 class="small m-0 p-0">Golden Bag</h4>
-                                        <p class="small">tk: 2,150.00</p>
+                                    <div className="product-review text-center">
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star-half "></i>
+                                        <i className=" far fa-star"></i>
+                                        <h4 className="small m-0 p-0">Black Bag</h4>
+                                        <p className="small">tk: 650.00</p>
+                
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div className="col-lg-3 col-md-6">
+                                <div className="product-top">
+                                    <img src="bag1.jpg" className="mb-3 img-fluid" alt="">
+                                    <div className="overlay-right">
+                                        <button type="button" className="btn" title="Quick shop">
+                                            <i className="fas fa-eye"></i>
+                                        </button>
+                                        <button type="button" className="btn" title="Add to wishlist">
+                                            <i className="fas fa-heart"></i>
+                                        </button>
+                                        <button type="button" className="btn" title="Add to cart">
+                                            <i className="fas fa-shopping-cart"></i>
+                                        </button>
+                                    </div>
+                
+                                    <div className="product-review text-center">
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star "></i>
+                                        <i className=" fas fa-star-half "></i>
+                                        <i className=" far fa-star"></i>
+                                        <h4 className="small m-0 p-0">Golden Bag</h4>
+                                        <p className="small">tk: 2,150.00</p>
                 
                                     </div>
                                 </div>

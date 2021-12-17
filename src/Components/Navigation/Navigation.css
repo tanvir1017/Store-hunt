@@ -21,12 +21,14 @@
   border-bottom-right-radius: 10px;
 }
 .nav-link:hover {
-  transform: translateX(-10px);
+  transform: translateX(-8px);
 }
 .navbar-toggler {
   color: black;
   border: none !important;
-
   box-shadow: none !important;
   z-index: 1000;
+}
+.user-img {
+  z-index: 10000;
 }

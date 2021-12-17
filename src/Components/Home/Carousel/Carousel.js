@@ -7,42 +7,42 @@ const Carousel = () => {
     <div>
       <div
         id="carouselExampleFade"
-        class="carousel slide carousel-fade"
+        className="carousel slide carousel-fade"
         data-bs-ride="carousel"
       >
-        <div class="carousel-inner">
+        <div className="carousel-inner">
           <Navigation></Navigation>
-          <div class="carousel-item active">
+          <div className="carousel-item active">
             <img
               src="https://i.ibb.co/DVrg68t/baby-shop-cart.jpg"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src="https://i.ibb.co/c6CYYbz/big-sale.jpg"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src="https://i.ibb.co/gFkShmM/shoes3.jpg"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
             />
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="prev"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-25"
+            className="h-5 w-25"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -52,17 +52,17 @@ const Carousel = () => {
               clip-rule="evenodd"
             />
           </svg>
-          <span class="visually-hidden">Previous</span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="next"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-25"
+            className="h-5 w-25"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -77,7 +77,7 @@ const Carousel = () => {
               clip-rule="evenodd"
             />
           </svg>
-          <span class="visually-hidden">Next</span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
     </div>

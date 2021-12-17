@@ -14,10 +14,7 @@ const HomeProduct = () => {
   return (
     <div id="features-section">
       <div className="container">
-        <div class="row p-3 mb-4">
-          <div class="col-lg-12">
-            <h5 class="mb-2 text-muted category-title">Trending </h5>
-          </div>{" "}
+        <div className="row p-3 mb-4">
           {homeProducts.map((sale) => (
             <Product key={sale._id} sale={sale}></Product>
           ))}

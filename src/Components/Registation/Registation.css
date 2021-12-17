@@ -1,0 +1,41 @@
+.button-reg {
+  background-color: #e84545;
+  padding: 7px 50px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  font-family: "lobster", cursive;
+  letter-spacing: 2px;
+}
+.login-text {
+  font-family: "lobster", cursive;
+  letter-spacing: 2px;
+}
+.login-img {
+  margin-top: -15px;
+}
+.googleBtn {
+  display: inline-block;
+  margin-top: 7px;
+  width: 120px;
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.googleBtn img {
+  max-width: 23%;
+}
+.fbBtn {
+  display: inline-block;
+  margin-top: 7px;
+  width: 120px;
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.fbBtn img {
+  max-width: 40%;
+}

@@ -22,20 +22,22 @@ const Products = () => {
       email: user.email,
     };
 
-    axios.post("http://localhost:5000/order", data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        swal({
-          title: "Order Recived Successfully",
-          text: "our delivery soldier will give the product within 5 to 7 days",
-          icon: "success",
-          button: "Ok",
-        });
-      }
-    });
+    axios
+      .post("https://desolate-taiga-27947.herokuapp.com/order", data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.insertedId) {
+          swal({
+            title: "Order Recived Successfully",
+            text: "our delivery soldier will give the product within 5 to 7 days",
+            icon: "success",
+            button: "Ok",
+          });
+        }
+      });
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://desolate-taiga-27947.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleProduct(data);

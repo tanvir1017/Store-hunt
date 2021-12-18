@@ -8,7 +8,9 @@ const MyOrder = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order?email=${user.email}`)
+    fetch(
+      `https://desolate-taiga-27947.herokuapp.com/order?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -24,7 +26,7 @@ const MyOrder = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        const uri = `http://localhost:5000/order/${id}`;
+        const uri = `https://desolate-taiga-27947.herokuapp.com/order/${id}`;
         fetch(uri, {
           method: "DELETE",
         })

@@ -9,7 +9,7 @@ const Explore = () => {
   const [num, setNum] = useState(0);
   const [display, setDisplay] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://desolate-taiga-27947.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => {
         setDisplay(data);

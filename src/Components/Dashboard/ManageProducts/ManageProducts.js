@@ -5,7 +5,7 @@ import ManageProduct from "./ManageProduct";
 const ManageProducts = () => {
   const [manageProducts, setManageProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://desolate-taiga-27947.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => {
         setManageProducts(data);
@@ -21,7 +21,7 @@ const ManageProducts = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        const uri = `http://localhost:5000/product/${id}`;
+        const uri = `https://desolate-taiga-27947.herokuapp.com/product/${id}`;
         fetch(uri, {
           method: "DELETE",
         })

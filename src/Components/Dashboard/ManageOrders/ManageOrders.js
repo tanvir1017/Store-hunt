@@ -6,7 +6,7 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/manageOrders`)
+    fetch(`https://desolate-taiga-27947.herokuapp.com/manageOrders`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -22,7 +22,7 @@ const ManageOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        const uri = `http://localhost:5000/manageOrders/${id}`;
+        const uri = `https://desolate-taiga-27947.herokuapp.com/manageOrders/${id}`;
         fetch(uri, {
           method: "DELETE",
         })

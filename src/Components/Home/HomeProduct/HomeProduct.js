@@ -5,7 +5,7 @@ const HomeProduct = () => {
   const [homeProducts, setHomeProducts] = useState([]);
   const size = 8;
   useEffect(() => {
-    fetch(`http://localhost:5000/product?size=${size}`)
+    fetch(`https://desolate-taiga-27947.herokuapp.com/product?size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         setHomeProducts(data);

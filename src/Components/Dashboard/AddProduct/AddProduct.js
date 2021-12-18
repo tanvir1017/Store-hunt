@@ -7,16 +7,18 @@ const AddProduct = () => {
   const [data, setData] = useState();
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/product", data).then((res) => {
-      if (res.data.insertedId) {
-        swal({
-          title: "Data loaded successfully",
-          text: "Great; Data has been load on the server",
-          icon: "success",
-          button: "Ok",
-        });
-      }
-    });
+    axios
+      .post("https://desolate-taiga-27947.herokuapp.com/product", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          swal({
+            title: "Data loaded successfully",
+            text: "Great; Data has been load on the server",
+            icon: "success",
+            button: "Ok",
+          });
+        }
+      });
   };
   const handleInput = (e) => {
     const filed = e.target.name;

@@ -3,6 +3,7 @@ import "./App.css";
 import AuthProvider from "./Components/Context/AuthProvider/AuthProvider";
 import AddProduct from "./Components/Dashboard/AddProduct/AddProduct";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import ManageOrders from "./Components/Dashboard/ManageOrders/ManageOrders";
 import ManageProducts from "./Components/Dashboard/ManageProducts/ManageProducts";
 import Explore from "./Components/Home/Explore/Explore";
 import Home from "./Components/Home/Home/Home";
@@ -46,8 +47,12 @@ function App() {
             >
               <Route path={`/dashboard/myOrders`} element={<MyOrder />} />
               <Route
-                path={`/dashboard/manageOrders`}
+                path={`/dashboard/manageProducts`}
                 element={<ManageProducts />}
+              />
+              <Route
+                path={`/dashboard/mangeOrders`}
+                element={<ManageOrders />}
               />
               <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
             </Route>

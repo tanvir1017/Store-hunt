@@ -32,11 +32,15 @@ function Dashboard(props) {
         <Link to="/dashboard/myOrders">MyOrders</Link>
       </List>
       <List>
-        <Link to="/dashboard/manageOrders">Mange Orders</Link>
+        <Link to="/dashboard/manageProducts">Mange Products</Link>
+      </List>
+      <List>
+        <Link to="/dashboard/mangeOrders">Manage Orders</Link>
       </List>
       <List>
         <Link to="/dashboard/addProduct">Add-Product</Link>
       </List>
+
       <Divider />
     </div>
   );

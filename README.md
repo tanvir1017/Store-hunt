@@ -50,8 +50,8 @@ To deploy this website we use the firebase and heroku.
 
 ## Logo
 
-![Logo](https://i.ibb.co/Chfd4Nt/logo.png)
+<!-- ![Logo](https://i.ibb.co/Chfd4Nt/logo.png) -->
 
 ## Photo view home page
 
-![Photo view home page](https://i.postimg.cc/43qpMHF4/img-2.png)
+![Photo view home page](https://i.ibb.co/nDpHB2K/screencapture-store-hunt-web-app-2021-12-18-23-07-22.png)

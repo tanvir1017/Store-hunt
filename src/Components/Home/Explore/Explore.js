@@ -18,12 +18,25 @@ const Explore = () => {
   const trending = sales.filter((sale) => sale.category === "trending");
   const hotdeals = sales.filter((sale) => sale.category === "hotdeals");
   const vagitables = sales.filter((sale) => sale.category === "vagitables");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <Navigation2></Navigation2>
       <div className="row banner_sec">
-        <div className="col-lg-8 col-sm-10">
-          <input type="text" placeholder="search" />
+        <div className="col-lg-12 container d-flex align-items-center justify-content-center col-sm-12 search">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="shadow"
+              placeholder="&#xF002; Search"
+              style={{ fontFamily: "Arial, FontAwesome" }}
+            />
+            <button className="shadow search_button" type="submit">
+              Search
+            </button>
+          </form>
         </div>
       </div>
       <>

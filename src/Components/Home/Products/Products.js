@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
+import swal from "sweetalert";
 import useAuth from "../../Hooks/useAuth";
 import Navigation2 from "../../Navigation/Navigation2";
 import "./Product.css";
@@ -9,6 +11,29 @@ const Products = () => {
   const { user } = useAuth();
   const { id } = useParams();
   const [singleProduct, setSingleProduct] = useState({});
+  const handleBuyNOw = () => {
+    const data = {
+      name: name,
+      pcode: pcode,
+      price: price,
+      brand: brand,
+      img: img,
+      rating: rating,
+      email: user.email,
+    };
+
+    axios.post("http://localhost:5000/order", data).then((res) => {
+      console.log(res);
+      if (res.data.insertedId) {
+        swal({
+          title: "Order Recived Successfully",
+          text: "our delivery soldier will give the product within 5 to 7 days",
+          icon: "success",
+          button: "Ok",
+        });
+      }
+    });
+  };
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
@@ -29,25 +54,6 @@ const Products = () => {
     img,
     description,
   } = singleProduct;
-
-  const buyNow = () => {
-    fetch(`http://localhost:5000/order`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        pcode: pcode,
-        rating: rating,
-        img: img,
-        brand: brand,
-        email: user.email,
-      }),
-    })
-      .the((res) => res.josn())
-      .then((data) => console.log(data));
-  };
 
   // console.log(data);
   return (
@@ -129,7 +135,10 @@ const Products = () => {
                   <i className="text-white mr-2 fas fa-shopping-cart"></i> Add
                   to Cart
                 </button>
-                <button className="btn ml-2 mystyle ms-3" onClick={buyNow}>
+                <button
+                  className="btn ml-2 mystyle ms-3"
+                  onClick={handleBuyNOw}
+                >
                   <i className="text-white mr-2 fas fa-shopping-basket"></i> Buy
                   Now
                 </button>

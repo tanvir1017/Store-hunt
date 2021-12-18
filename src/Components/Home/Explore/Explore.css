@@ -1,9 +1,35 @@
 .banner_sec {
   background-image: url("https://www.dynodesoft.com/assets/img/Ecommerce-gif-1.gif");
-  /* background-position: center; */
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
   background-size: cover;
-  padding: 200px;
-  /* width: 100%; */
+
+  padding: 200px 0px;
+  margin-top: 5px;
+}
+.search input {
+  width: 230px;
+  height: 40px;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  padding-left: 7px;
+  font-size: 17px;
+  border-radius: 15px;
+  border: 2px solid #25acb9;
+  color: #f69292;
+  font-weight: bold;
+  background-color: transparent;
+  transition: 0.4s;
+}
+.search input:focus {
+  width: 250px;
+}
+.search_button {
+  background-color: #fa6363;
+  padding: 7px 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 9px;
 }

@@ -43,6 +43,14 @@ function App() {
                 </PrivateRoute>
               }
             ></Route>
+            {/* <Route
+              path="/orders"
+              element={
+                <PrivateRoute>
+                  <Order></Order>
+                </PrivateRoute>
+              }
+            ></Route> */}
             <Route
               path="/dashboard"
               element={

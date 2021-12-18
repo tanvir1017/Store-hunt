@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
-import useAuth from "../Hooks/useAuth";
-import Order from "./Order";
+import ManageProduct from "./ManageProduct";
 
-const MyOrder = () => {
-  const [orders, setOrders] = useState([]);
-  const { user } = useAuth();
-
+const ManageProducts = () => {
+  const [manageProducts, setManageProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/order?email=${user.email}`)
+    fetch("http://localhost:5000/product")
       .then((res) => res.json())
       .then((data) => {
-        setOrders(data);
+        setManageProducts(data);
       });
-  }, [user.email]);
+  }, []);
   // Delete Api
   const handleDelete = (id) => {
     swal({
@@ -24,7 +21,7 @@ const MyOrder = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        const uri = `http://localhost:5000/order/${id}`;
+        const uri = `http://localhost:5000/product/${id}`;
         fetch(uri, {
           method: "DELETE",
         })
@@ -34,8 +31,10 @@ const MyOrder = () => {
               swal("Poof! Your order has been deleted!", {
                 icon: "success",
               });
-              const remaining = orders.filter((order) => order._id !== id);
-              setOrders(remaining);
+              const remaining = manageProducts.filter(
+                (manageProduct) => manageProduct._id !== id
+              );
+              setManageProducts(remaining);
             }
           });
       } else {
@@ -44,24 +43,15 @@ const MyOrder = () => {
     });
   };
   return (
-    <div>
+    <div id="features-section">
       <div className="container">
-        {/* <!-- on sale section --> */}
-        <section id="on_sale">
-          <div className="container">
-            <div className="title-box">
-              <h2>Your orders: - {orders.length}</h2>
-            </div>
-          </div>
-        </section>
-        {/* <!-- on sale section --> */}
-        <div className="row ">
-          {orders.map((order) => (
-            <Order
-              key={order._id}
-              order={order}
+        <div className="row p-3 mb-4">
+          {manageProducts.map((manageProduct) => (
+            <ManageProduct
+              key={manageProduct._id}
+              manageProduct={manageProduct}
               handleDelete={handleDelete}
-            ></Order>
+            ></ManageProduct>
           ))}
         </div>
       </div>
@@ -69,4 +59,4 @@ const MyOrder = () => {
   );
 };
 
-export default MyOrder;
+export default ManageProducts;

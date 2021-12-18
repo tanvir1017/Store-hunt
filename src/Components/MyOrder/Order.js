@@ -2,11 +2,8 @@ import React from "react";
 import Rating from "react-rating";
 import "./MyOrder.css";
 
-const Order = ({ order }) => {
-  const { name, pcode, price, brand, img, rating, email } = order;
-  const handleDelete = () => {
-    alert("hello");
-  };
+const Order = ({ order, handleDelete }) => {
+  const { name, pcode, price, brand, img, rating, email, _id } = order;
   return (
     <div className="col-lg-6 col-md-5 col-sm-12 order-card">
       <div className="order-card-inside">
@@ -26,12 +23,15 @@ const Order = ({ order }) => {
                 />
               </div>
               <div className="col-8">
-                <span className="shadow edit_btn" onClick={handleDelete}>
-                  <i class="far fa-edit customize_icon"></i> Edit
+                <span className="shadow edit_btn">
+                  <i className="far fa-edit customize_icon"></i> Edit
                 </span>
 
-                <span className="shadow edit_btn" onClick={handleDelete}>
-                  <i class="far fa-trash-alt customize_icon"></i> Delete
+                <span
+                  className="shadow edit_btn"
+                  onClick={() => handleDelete(_id)}
+                >
+                  <i className="far fa-trash-alt customize_icon"></i> Delete
                 </span>
               </div>
             </div>

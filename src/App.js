@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./Components/Context/AuthProvider/AuthProvider";
+import AddProduct from "./Components/Dashboard/AddProduct/AddProduct";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import ManageProducts from "./Components/Dashboard/ManageProducts/ManageProducts";
 import Explore from "./Components/Home/Explore/Explore";
 import Home from "./Components/Home/Home/Home";
-import LastPart from "./Components/Home/LastPart/LastPart";
 import Products from "./Components/Home/Products/Products";
 import MyOrder from "./Components/MyOrder/MyOrder";
 import PrivateRoute from "./Components/Private/PrivateRoute";
@@ -36,33 +37,23 @@ function App() {
               }
             ></Route>
             <Route
-              path="/myOrders"
-              element={
-                <PrivateRoute>
-                  <MyOrder />
-                </PrivateRoute>
-              }
-            ></Route>
-            {/* <Route
-              path="/orders"
-              element={
-                <PrivateRoute>
-                  <Order></Order>
-                </PrivateRoute>
-              }
-            ></Route> */}
-            <Route
               path="/dashboard"
               element={
                 <PrivateRoute>
                   <Dashboard />{" "}
                 </PrivateRoute>
               }
-            ></Route>
+            >
+              <Route path={`/dashboard/myOrders`} element={<MyOrder />} />
+              <Route
+                path={`/dashboard/manageOrders`}
+                element={<ManageProducts />}
+              />
+              <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
+            </Route>
             <Route path="/registation" element={<Registation />}></Route>
             <Route path="/logIn" element={<Login />}></Route>
           </Routes>
-          <LastPart />
         </BrowserRouter>
       </AuthProvider>
     </div>

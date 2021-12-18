@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../Banner/Banner";
 import Carousel from "../Carousel/Carousel";
 import HomeProduct from "../HomeProduct/HomeProduct";
+import LastPart from "../LastPart/LastPart";
 import OurService from "../OurService/OurService";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
         <Banner />
       </div>
       <OurService />
+      <LastPart />
     </div>
   );
 };

@@ -54,12 +54,11 @@
 }
 
 .overlay-right {
-  display: inline-flex;
   opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 18%;
+  left: -6%;
   width: 70px;
+  bottom: -243%;
 }
 .overlay-right .fas {
   cursor: pointer;

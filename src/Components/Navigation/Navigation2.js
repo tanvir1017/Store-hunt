@@ -37,11 +37,11 @@ const Navigation2 = () => {
                   Explore <i className="fas fa-store-alt ms-2"></i>
                 </Link>
               )}
-              {user.email && (
+              {/* {user.email && (
                 <Link className="nav-link active shadow " to="/myOrders">
                   My Order <i className="fas fa-shopping-cart ms-2"></i>
                 </Link>
-              )}
+              )} */}
               {user.email && (
                 <Link className="nav-link active shadow  " to="/dashboard">
                   Dashboard<i className="fas fa-door-open ms-2"></i>

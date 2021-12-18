@@ -2,7 +2,7 @@ import React from "react";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import "../OnSale/OnSale.css";
+import "./product.css";
 
 const Product = ({ sale }) => {
   const { isLoading } = useAuth();
@@ -15,7 +15,7 @@ const Product = ({ sale }) => {
             <img src={img} className="mb-3 img-fluid " alt="" />
           </Link>
           <div className="icon">
-            <div className="overlay-right">
+            <div className="product_hover">
               <button type="button" className="btn" title="Quick shop">
                 <i className="fas fa-eye shadow"></i>
               </button>

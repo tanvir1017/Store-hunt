@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "react-rating";
 import "../../MyOrder/MyOrder.css";
 
 const ManageOrder = ({ order, handleDelete }) => {
-  const { name, pcode, price, brand, img, rating, email, _id } = order;
+  const { name, pcode, price, brand, img, rating, email, _id, pending } = order;
+  const [num, setNum] = useState(0);
+  const handleStatus = () => {
+    const checked = false;
+    fetch("http://localhost:5000/manageOrders", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ _id, checked }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setNum(num + 1);
+      });
+  };
   return (
     <div className="col-lg-6 col-md-5 col-sm-12 order-card">
       <div className="order-card-inside">
@@ -13,7 +28,7 @@ const ManageOrder = ({ order, handleDelete }) => {
           </div>
           <div className="col-lg-7 p-2 col-sm-12 col-md-8 product-info">
             <div className="row">
-              <div className="col-4">
+              <div className="col-6">
                 <Rating
                   style={{ fontSize: "12px", color: "#e84545" }}
                   initialRating={rating}
@@ -22,18 +37,7 @@ const ManageOrder = ({ order, handleDelete }) => {
                   readonly
                 />
               </div>
-              <div className="col-8">
-                <span className="shadow edit_btn">
-                  <i className="far fa-edit customize_icon"></i> Edit
-                </span>
-
-                <span
-                  className="shadow edit_btn"
-                  onClick={() => handleDelete(_id)}
-                >
-                  <i className="far fa-trash-alt customize_icon"></i> Delete
-                </span>
-              </div>
+              <div className="col-6"></div>
             </div>
             <small className="d-block">
               Product: - <span className="fw-bold ">{name}</span>
@@ -48,13 +52,24 @@ const ManageOrder = ({ order, handleDelete }) => {
             <small className="d-block">
               Price: - <span className="fw-bold">{price}</span>
             </small>
+            <small className="d-block">
+              Status: -{" "}
+              <span className="fw-bold text-success">
+                {pending ? "Pending" : "Aproved"}
+              </span>
+            </small>
 
-            <h5 className="owner-info">Owener info</h5>
             <small className="d-block">
               Email: - <span className="fw-bold ">{email}</span>
             </small>
-            <small className="d-block">
-              <span className="fst-italic">pending...</span>
+            <small className="d-block mt-2">
+              <span className="edit_btn me-2" onClick={handleStatus}>
+                <i className="far fa-edit" id="customize_icon"></i> Aproved
+              </span>
+
+              <span className="edit_btn" onClick={() => handleDelete(_id)}>
+                <i className="far fa-trash-alt" id="customize_icon"></i> Delete
+              </span>
             </small>
           </div>
         </div>

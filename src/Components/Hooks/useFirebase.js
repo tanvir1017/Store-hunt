@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  getIdToken,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -16,15 +17,20 @@ initAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
+  const [admin, setAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [token, setToken] = useState("");
   const auth = getAuth();
 
   // Google sign in
   const googleSignin = (location, navigate) => {
     const googleProgivder = new GoogleAuthProvider();
     signInWithPopup(auth, googleProgivder)
-      .then((user) => {
-        if (user) {
+      .then((result) => {
+        const user = result.user;
+        saveUer(user.email, user.displayName, "PUT");
+
+        if (result) {
           swal({
             title: "Login Successfully",
             text: "Great you do well, Now you can do everything",
@@ -32,6 +38,7 @@ const useFirebase = () => {
             button: "Oww",
           });
         }
+
         setError("");
         const uri = location?.state?.from || "/";
         navigate(uri);
@@ -57,17 +64,18 @@ const useFirebase = () => {
         //   update name
         const newUser = { email, displayName: name };
         setUser(newUser);
+        // save user data to the db
+        saveUer(email, name, "POST");
         //   update profile
         updateProfile(auth.currentUser, {
           displayName: name,
         })
           .then(() => {})
           .catch((error) => {});
-        // location vhange error clear
+
         setError("");
         const uri = location?.state?.from || "/";
         navigate(uri);
-        console.log(user);
       })
       .catch((error) => {
         setError(error.message);
@@ -121,21 +129,43 @@ const useFirebase = () => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        getIdToken(user).then((idToken) => setToken(idToken));
       } else {
         setUser({});
       }
       setIsLoading(false);
     });
+
     return () => unSubscribe;
   }, [auth]);
+  // Save user to data base
+  const saveUer = (email, displayName, methodType) => {
+    const user = { email, displayName };
+    fetch("http://localhost:5000/users", {
+      method: methodType,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
+  // Load admin api
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
   return {
     user,
     googleSignin,
     register,
     logout,
     signin,
+    admin,
     error,
     isLoading,
+    token,
   };
 };
 export default useFirebase;

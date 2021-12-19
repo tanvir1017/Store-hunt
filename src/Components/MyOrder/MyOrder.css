@@ -74,12 +74,13 @@
 }
 .edit_btn {
   padding: 2px 12px;
-  margin-left: 12px;
+
   color: black;
   border-radius: 10px;
   cursor: pointer;
+  background-color: #cacaca;
 }
-.customize_icon {
+#customize_icon {
   color: #e84545;
   font-size: 16px;
 }

@@ -20,6 +20,7 @@ const Products = () => {
       img: img,
       rating: rating,
       email: user.email,
+      pending: true,
     };
 
     axios

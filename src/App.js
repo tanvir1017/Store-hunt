@@ -3,12 +3,14 @@ import "./App.css";
 import AuthProvider from "./Components/Context/AuthProvider/AuthProvider";
 import AddProduct from "./Components/Dashboard/AddProduct/AddProduct";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import ManageOrders from "./Components/Dashboard/ManageOrders/ManageOrders";
 import ManageProducts from "./Components/Dashboard/ManageProducts/ManageProducts";
 import Explore from "./Components/Home/Explore/Explore";
 import Home from "./Components/Home/Home/Home";
 import Products from "./Components/Home/Products/Products";
 import MyOrder from "./Components/MyOrder/MyOrder";
+import AdminRoute from "./Components/Private/AdminRoute";
 import PrivateRoute from "./Components/Private/PrivateRoute";
 import Login from "./Components/Registation/Login";
 import Registation from "./Components/Registation/Registation";
@@ -53,6 +55,14 @@ function App() {
               <Route
                 path={`/dashboard/mangeOrders`}
                 element={<ManageOrders />}
+              />
+              <Route
+                path={`/dashboard/makeAdmin`}
+                element={
+                  <AdminRoute>
+                    <MakeAdmin />
+                  </AdminRoute>
+                }
               />
               <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
             </Route>

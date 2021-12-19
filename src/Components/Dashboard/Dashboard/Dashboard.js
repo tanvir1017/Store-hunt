@@ -10,17 +10,18 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link, Outlet } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  const { admin, logout } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
   const drawer = (
     <div>
       <Toolbar />
@@ -31,14 +32,26 @@ function Dashboard(props) {
       <List>
         <Link to="/dashboard/myOrders">MyOrders</Link>
       </List>
+      {admin && (
+        <Box>
+          <List>
+            <Link to="/dashboard/manageProducts">Mange Products</Link>
+          </List>
+          <List>
+            <Link to="/dashboard/mangeOrders">Manage Orders</Link>
+          </List>
+          <List>
+            <Link to="/dashboard/makeAdmin">Make Admin</Link>
+          </List>
+          <List>
+            <Link to="/dashboard/addProduct">Add-Product</Link>
+          </List>
+        </Box>
+      )}
       <List>
-        <Link to="/dashboard/manageProducts">Mange Products</Link>
-      </List>
-      <List>
-        <Link to="/dashboard/mangeOrders">Manage Orders</Link>
-      </List>
-      <List>
-        <Link to="/dashboard/addProduct">Add-Product</Link>
+        <Link to="/dashboard/addProduct" onClick={logout}>
+          Logout
+        </Link>
       </List>
 
       <Divider />

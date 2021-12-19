@@ -24,14 +24,15 @@ const Order = ({ order, handleDelete }) => {
               </div>
               <div className="col-8">
                 <span className="shadow edit_btn">
-                  <i className="far fa-edit customize_icon"></i> Edit
+                  <i className="far fa-edit " id="customize_icon"></i> Edit
                 </span>
 
                 <span
                   className="shadow edit_btn"
                   onClick={() => handleDelete(_id)}
                 >
-                  <i className="far fa-trash-alt customize_icon"></i> Delete
+                  <i className="far fa-trash-alt " id="customize_icon"></i>{" "}
+                  Delete
                 </span>
               </div>
             </div>

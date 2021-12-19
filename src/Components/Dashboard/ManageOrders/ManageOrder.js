@@ -7,7 +7,7 @@ const ManageOrder = ({ order, handleDelete }) => {
   const [num, setNum] = useState(0);
   const handleStatus = () => {
     const checked = false;
-    fetch("http://localhost:5000/manageOrders", {
+    fetch("https://desolate-taiga-27947.herokuapp.com/manageOrders", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

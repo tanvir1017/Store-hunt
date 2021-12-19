@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const { isLoading, token } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/users/admin`, {
+    fetch(`https://desolate-taiga-27947.herokuapp.com/users/admin`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,

@@ -152,7 +152,7 @@ const useFirebase = () => {
 
   // Load admin api
   useEffect(() => {
-    fetch(`https://desolate-taiga-27947.herokuapp.com/users/${user.email}`)
+    fetch(`https://desolate-taiga-27947.herokuapp.com/users/admin${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);

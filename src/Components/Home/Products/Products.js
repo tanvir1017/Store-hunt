@@ -26,7 +26,6 @@ const Products = () => {
     axios
       .post("https://desolate-taiga-27947.herokuapp.com/order", data)
       .then((res) => {
-        console.log(res);
         if (res.data.insertedId) {
           swal({
             title: "Order Recived Successfully",

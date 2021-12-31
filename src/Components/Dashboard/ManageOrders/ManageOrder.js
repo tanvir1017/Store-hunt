@@ -15,7 +15,7 @@ const ManageOrder = ({ order, handleDelete }) => {
       body: JSON.stringify({ _id, checked }),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         setNum(num + 1);
       });
   };

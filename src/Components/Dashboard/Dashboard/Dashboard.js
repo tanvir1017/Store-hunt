@@ -2,7 +2,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -11,11 +10,12 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import "./Dashboard.css";
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const { admin, logout } = useAuth();
+  const { admin, logout, user } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -25,36 +25,54 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Divider />
-      <List>
-        <Link to="/">Home</Link>
+
+      <List className="photoURL">
+        <img src={user.photoURL} className="shadow" alt="" />
       </List>
-      <List>
-        <Link to="/dashboard/myOrders">MyOrders</Link>
+      <List className="userName">
+        <p>{user.displayName}</p>
+      </List>
+      <List className="text-left link-list">
+        <Link to="/">
+          <i className="fas fa-home"></i> Menu
+        </Link>
+      </List>
+      <List className="text-left link-list">
+        <Link to="/dashboard/myOrders">
+          <i className="fab fa-shopify"></i> MyOrders
+        </Link>
       </List>
       {admin && (
         <Box>
-          <List>
-            <Link to="/dashboard/manageProducts">Mange Products</Link>
+          <List className="text-left link-list">
+            <Link to="/dashboard/manageProducts">
+              {" "}
+              <i className="fas fa-store-alt"></i> Mange Products
+            </Link>
           </List>
-          <List>
-            <Link to="/dashboard/mangeOrders">Manage Orders</Link>
+          <List className="text-left link-list">
+            <Link to="/dashboard/mangeOrders">
+              <i className="fas fa-tasks"></i> Manage Orders
+            </Link>
           </List>
-          <List>
-            <Link to="/dashboard/makeAdmin">Make Admin</Link>
+          <List className="text-left link-list">
+            <Link to="/dashboard/makeAdmin">
+              {" "}
+              <i className="fas fa-user-shield "></i> Make Admin
+            </Link>
           </List>
-          <List>
-            <Link to="/dashboard/addProduct">Add-Product</Link>
+          <List className="text-left link-list add-prduct">
+            <Link to="/dashboard/addProduct">
+              <i className="far fa-plus-square"></i> Add-Product
+            </Link>
           </List>
         </Box>
       )}
-      <List>
+      <List className="text-left link-list">
         <Link to="/dashboard/addProduct" onClick={logout}>
-          Logout
+          <i className="fas fa-sign-out-alt "></i> Logout
         </Link>
       </List>
-
-      <Divider />
     </div>
   );
 
@@ -105,11 +123,13 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "#f53333",
             },
           }}
         >
           {drawer}
         </Drawer>
+        {/* laptop view or pc */}
         <Drawer
           variant="permanent"
           sx={{
@@ -117,6 +137,7 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "#f53333 ",
             },
           }}
           open

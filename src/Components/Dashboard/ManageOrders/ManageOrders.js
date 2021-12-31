@@ -4,7 +4,6 @@ import "../../MyOrder/MyOrder.css";
 import ManageOrder from "./ManageOrder";
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
-
   useEffect(() => {
     fetch(`https://desolate-taiga-27947.herokuapp.com/manageOrders`)
       .then((res) => res.json())

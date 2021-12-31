@@ -1,0 +1,37 @@
+.css-1t29gy6-MuiToolbar-root {
+  display: none !important;
+}
+.MuiBox-root .css-1vn0mrr {
+  background-color: black;
+}
+.css-zxtyt4-MuiPaper-root-MuiAppBar-root {
+  background-color: rgb(0, 0, 0) !important;
+  box-shadow: none !important;
+}
+.link-list {
+  text-align: left;
+  transition: 0.4s;
+}
+.link-list a {
+  margin-left: 25px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.photoURL img {
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+}
+.userName p {
+  text-align: center;
+  font-size: 20px;
+  font-family: "lobster", cursive;
+  letter-spacing: 1px;
+  color: white;
+}
+.add-prduct i {
+  color: white;
+  font-size: 15px;
+}
